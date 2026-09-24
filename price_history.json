@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "date": "2026-09-24",
+    "fares": [
+      {
+        "price": 1145,
+        "airline": "Scoot",
+        "verdict": ""
+      }
+    ]
+  }
+]
