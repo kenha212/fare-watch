@@ -78,3 +78,4 @@ RAPIDAPI_KEY=xxx SMTP_USER=you@gmail.com SMTP_PASS=xxxxxxxxxxxxxxxx \
 
 Without `SMTP_USER`/`SMTP_PASS` set, it prints the message instead of
 emailing — useful for testing the fare fetch and signal logic first.# fare-watch
+# fare-watch
