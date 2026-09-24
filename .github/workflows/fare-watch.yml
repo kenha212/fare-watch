@@ -18,12 +18,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - run: pip install -r fare-watch/requirements.txt
+      - run: pip install -r requirements.txt
 
-      - run: python fare-watch/fare_watch.py
+      - run: python fare_watch.py
         env:
-          AMADEUS_API_KEY: ${{ secrets.AMADEUS_API_KEY }}
-          AMADEUS_API_SECRET: ${{ secrets.AMADEUS_API_SECRET }}
+          RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
 
@@ -31,6 +30,6 @@ jobs:
         run: |
           git config user.name "fare-watch-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add fare-watch/price_history.json
+          git add price_history.json
           git commit -m "Update fare history" || echo "No changes to commit"
           git push
