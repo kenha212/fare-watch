@@ -23,5 +23,25 @@
         "verdict": null
       }
     ]
+  },
+  {
+    "date": "2026-09-24",
+    "fares": [
+      {
+        "price": 1148,
+        "airline": "Scoot",
+        "verdict": ""
+      },
+      {
+        "price": 1352.0,
+        "airline": "Batik Air Malaysia + VietJet Air + Virgin Australia Airlines",
+        "verdict": null
+      },
+      {
+        "price": 1361.0,
+        "airline": "VietJet Air + Virgin Australia Airlines",
+        "verdict": null
+      }
+    ]
   }
 ]
