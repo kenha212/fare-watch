@@ -1,0 +1,9 @@
+{
+  "origin": "SYD",
+  "destination": "SGN",
+  "depart_date": "2026-11-20",
+  "return_date": "2027-01-08",
+  "target_price_aud": 450,
+  "currency": "AUD",
+  "email_to": "huykenny212@gmail.com"
+}
