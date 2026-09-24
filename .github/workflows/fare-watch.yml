@@ -2,8 +2,8 @@ name: Fare Watch
 
 on:
   schedule:
-    # Every 3 days at 22:00 UTC (~9am Sydney time, AEDT)
-    - cron: "0 22 */3 * *"
+    # Every 4 hours
+    - cron: "0 */4 * * *"
   workflow_dispatch: {}
 
 jobs:
@@ -26,10 +26,10 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
 
-      - name: Commit updated price history
+      - name: Commit updated price history and digest state
         run: |
           git config user.name "fare-watch-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add price_history.json
+          git add price_history.json digest_state.json
           git commit -m "Update fare history" || echo "No changes to commit"
           git push
