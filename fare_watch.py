@@ -26,6 +26,7 @@ import requests
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.json")
 HISTORY_PATH = os.path.join(os.path.dirname(__file__), "price_history.json")
+STATE_PATH = os.path.join(os.path.dirname(__file__), "digest_state.json")
 
 RAPIDAPI_KEY = os.environ.get("RAPIDAPI_KEY")
 RAPIDAPI_HOST = "google-flights-live-api.p.rapidapi.com"
@@ -155,6 +156,7 @@ def main():
         raise SystemExit(f"Missing or empty config at {CONFIG_PATH}")
 
     history = load_json(HISTORY_PATH, [])
+    state = load_json(STATE_PATH, {"last_digest_date": None, "last_buy_alert_date": None})
 
     if not RAPIDAPI_KEY:
         raise SystemExit("Set the RAPIDAPI_KEY environment variable.")
@@ -175,11 +177,24 @@ def main():
     fares_line = ", ".join(f"{f['airline']} ${f['price']:.0f}" for f in fares)
     print(f"[{today}] {cfg['origin']}->{cfg['destination']}: {fares_line} ({signal}) - {message}")
 
-    if signal in ("buy", "rising"):
-        subject = f"[Fare Watch] {cfg['origin']}-{cfg['destination']}: {signal.upper()} — ${cheapest['price']:.0f} AUD"
-        fares_list = "\n".join(f"  - {f['airline']}: ${f['price']:.0f}" for f in fares)
+    fares_list = "\n".join(f"  - {f['airline']}: ${f['price']:.0f}" for f in fares)
+
+    # Once-a-day digest: top 3 fares + current signal, regardless of signal.
+    if state.get("last_digest_date") != today:
+        subject = f"[Fare Watch] {cfg['origin']}-{cfg['destination']} daily check — {signal.upper()} — ${cheapest['price']:.0f} AUD"
         body = f"{message}\n\nToday's cheapest options:\n{fares_list}"
         send_email(cfg["email_to"], subject, body)
+        state["last_digest_date"] = today
+        save_json(STATE_PATH, state)
+
+    # Extra same-day nudge if a buy signal shows up after the digest already
+    # went out this morning — capped at one extra per day.
+    elif signal == "buy" and state.get("last_buy_alert_date") != today:
+        subject = f"[Fare Watch] {cfg['origin']}-{cfg['destination']}: BUY NOW — ${cheapest['price']:.0f} AUD"
+        body = f"{message}\n\nToday's cheapest options:\n{fares_list}"
+        send_email(cfg["email_to"], subject, body)
+        state["last_buy_alert_date"] = today
+        save_json(STATE_PATH, state)
 
 
 if __name__ == "__main__":
