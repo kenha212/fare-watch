@@ -43,5 +43,25 @@
         "verdict": null
       }
     ]
+  },
+  {
+    "date": "2026-09-25",
+    "fares": [
+      {
+        "price": 1144,
+        "airline": "Scoot",
+        "verdict": ""
+      },
+      {
+        "price": 1360.0,
+        "airline": "China Southern Airlines + VietJet Air + Jetstar Airways",
+        "verdict": null
+      },
+      {
+        "price": 1384.0,
+        "airline": "VietJet Air + Batik Air Malaysia + Jetstar Airways",
+        "verdict": null
+      }
+    ]
   }
 ]
