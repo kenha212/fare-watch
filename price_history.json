@@ -103,5 +103,25 @@
         "verdict": null
       }
     ]
+  },
+  {
+    "date": "2026-10-26",
+    "fares": [
+      {
+        "price": 1240,
+        "airline": "Scoot",
+        "verdict": ""
+      },
+      {
+        "price": 1460.0,
+        "airline": "AirAsia + Batik Air Malaysia + Scoot",
+        "verdict": null
+      },
+      {
+        "price": 1470.0,
+        "airline": "Cebu Pacific + Scoot",
+        "verdict": null
+      }
+    ]
   }
 ]
