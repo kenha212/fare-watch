@@ -123,5 +123,25 @@
         "verdict": null
       }
     ]
+  },
+  {
+    "date": "2026-10-27",
+    "fares": [
+      {
+        "price": 1297,
+        "airline": "Jetstar",
+        "verdict": ""
+      },
+      {
+        "price": 1314,
+        "airline": "Scoot",
+        "verdict": ""
+      },
+      {
+        "price": 1457.0,
+        "airline": "Batik Air Malaysia + VietJet Air + Scoot",
+        "verdict": null
+      }
+    ]
   }
 ]
