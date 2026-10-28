@@ -143,5 +143,25 @@
         "verdict": null
       }
     ]
+  },
+  {
+    "date": "2026-10-28",
+    "fares": [
+      {
+        "price": 1301,
+        "airline": "Jetstar",
+        "verdict": ""
+      },
+      {
+        "price": 1318,
+        "airline": "Scoot",
+        "verdict": ""
+      },
+      {
+        "price": 1533.0,
+        "airline": "VietJet Air + Virgin Australia Airlines",
+        "verdict": null
+      }
+    ]
   }
 ]
