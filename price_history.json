@@ -163,5 +163,25 @@
         "verdict": null
       }
     ]
+  },
+  {
+    "date": "2026-10-29",
+    "fares": [
+      {
+        "price": 1245,
+        "airline": "Scoot",
+        "verdict": ""
+      },
+      {
+        "price": 1267,
+        "airline": "Jetstar",
+        "verdict": ""
+      },
+      {
+        "price": 1372.0,
+        "airline": "VietJet Air + Scoot",
+        "verdict": null
+      }
+    ]
   }
 ]
