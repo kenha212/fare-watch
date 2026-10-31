@@ -203,5 +203,25 @@
         "verdict": null
       }
     ]
+  },
+  {
+    "date": "2026-10-31",
+    "fares": [
+      {
+        "price": 1240,
+        "airline": "Scoot",
+        "verdict": ""
+      },
+      {
+        "price": 1386.0,
+        "airline": "Scoot + VietJet Air + Garuda Indonesia",
+        "verdict": null
+      },
+      {
+        "price": 1419.0,
+        "airline": "VietJet Air + Garuda Indonesia",
+        "verdict": null
+      }
+    ]
   }
 ]
