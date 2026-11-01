@@ -223,5 +223,25 @@
         "verdict": null
       }
     ]
+  },
+  {
+    "date": "2026-11-01",
+    "fares": [
+      {
+        "price": 1241,
+        "airline": "Scoot",
+        "verdict": ""
+      },
+      {
+        "price": 1467.0,
+        "airline": "VietJet Air + Scoot",
+        "verdict": null
+      },
+      {
+        "price": 1508.0,
+        "airline": "Scoot + Virgin Australia Airlines + VietJet Air",
+        "verdict": null
+      }
+    ]
   }
 ]
