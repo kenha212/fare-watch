@@ -243,5 +243,25 @@
         "verdict": null
       }
     ]
+  },
+  {
+    "date": "2026-11-02",
+    "fares": [
+      {
+        "price": 1318,
+        "airline": "Scoot",
+        "verdict": ""
+      },
+      {
+        "price": 1521.0,
+        "airline": "AirAsia + Batik Air Malaysia + Scoot",
+        "verdict": null
+      },
+      {
+        "price": 1538.0,
+        "airline": "VietJet Air + Scoot",
+        "verdict": null
+      }
+    ]
   }
 ]
